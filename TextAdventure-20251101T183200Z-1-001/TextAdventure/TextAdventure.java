@@ -90,8 +90,8 @@ public class TextAdventure
   // Swim Further
   private void enterZone4()
   {
-    console.setImage("houseEnding.png");
-    System.out.println("You leave the artifact alone and continue swimming until you find an island.\nOn the island, you see a small abandoned house.\nEnter: Go inside the house\nExplore: Walk around the island\n");
+    console.setImage("thingIDK.png");
+    System.out.println("You leave the artifact alone and continue swimming until you find an island.\nOn the island, you see a temple in the distance. \nEnter: Go to the temple\nExplore: Walk around the island\n");
     String choice = inScanner.nextLine().toLowerCase();
 
     if (choice.equals("enter"))
@@ -109,7 +109,7 @@ public class TextAdventure
   private void enterZone5()
   {
     console.setImage("alienArmy.png");
-    System.out.println("After you kill the one alien, you hear tons of footsteps from behind the hill, many soldiers apear in front of you                        \nFight: Take up your sword and face them\nSurrender: Drop your weapon and give up\n");
+    System.out.println("You hear tons of footsteps from behind a hill, many soldiers apear in front of you. \nFight: Take your sword and face them\nSurrender: Drop your weapon and give up\n");
     String choice = inScanner.nextLine().toLowerCase();
 
     if (choice.equals("fight"))
@@ -117,43 +117,43 @@ public class TextAdventure
       boolean survive = rand.nextInt(100) < 25; // 25% chance to survive
       if (survive)
       {
-        console.setImage("zone5_victory.jpg");
+        console.setImage("alienArmyWin.png");
         ourHero.defeatMonster();
         ourHero.setGold(ourHero.getGold() + 50);
-        System.out.println("Against all odds, you fight through the alien army and find a hidden passage underground!\n");
+        System.out.println("Against all odds, you fight through the alien army and find a hidden passage underground.\n");
         enterZone6();
       }
       else
       {
-        console.setImage("zone5_defeat.jpg");
-        System.out.println("You fight bravely, but plasma bolts rain down on you. You fall to the ground as everything fades away.\n");
+        console.setImage("alienArmyLoss.png");
+        System.out.println("You fight but theres just to many. You keep getting shot and everything around you turns red.\n");
         gameEnd();
       }
     }
     else if (!choice.equals("surrender"))
     {
-      console.setImage("zone5_confused.jpg");
-      System.out.println("You freeze, unsure of what to do. The aliens interpret your silence as a threat and fire their weapons.\n");
+      console.setImage("alienArmyLoss.png");
+      System.out.println("You freeze, unsure of what to do. The aliens take your silence as a threat and fire their weapons.\n");
       gameEnd();
     }
     else
     {
-      console.setImage("zone5_captured.jpg");
+      console.setImage("alienArmySurrender");
       System.out.println("You surrender, and the aliens capture you. They bring you aboard a massive ship heading toward an alien temple.\n");
       enterZone6();
     }
   }
 
-  // === ZONE 6: Final Outcome ===
+  // Final Outcome
   private void enterZone6()
   {
-    console.setImage("zone6.jpg");
+    console.setImage("houseEnding.png");
     System.out.println("You arrive at a massive alien temple glowing with strange energy.\nA guardian emerges from the light and demands to see your worth.\nOnly those with both 50 gold && at least one monster defeated may pass.\n");
 
     if (ourHero.getGold() >= 50 && ourHero.getMonstersDefeated() > 0)
     {
       console.setImage("zone6_good.jpg");
-      System.out.println("The guardian nods and steps aside.\nYou enter the temple and feel");
+      System.out.println("The guardian nods and steps aside.\nYou enter the temple and see a blinding light that seems to speak to you...");
     }
 
     gameEnd();
