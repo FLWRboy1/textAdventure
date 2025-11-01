@@ -23,7 +23,7 @@ public class TextAdventure
     input = inScanner.nextLine();
     ourHero.changeName(input);
 
-    System.out.println("You wake up in a daze. Unfamiliar surroundings, lasers flying across the sky, screams coming from all directions, and a large, seemingly endless ocean behind you.\nIn the distance, you see an alien coming toward you with their gun raised.\nOcean: Swim away from the alien\nSword: Grab the sword sitting on a rock and try to fight\n");
+    System.out.println("You wake up in a daze unfamiliar with your surroundings. \n Lasers flying across the sky, screams coming from all directions, and a large, seemingly endless ocean behind you.\nIn the distance, you see an alien coming toward you with their gun raised.\nOcean: Swim away from the alien\nSword: Grab the sword sitting on a rock and try to fight\n");
     input = inScanner.nextLine().toLowerCase();
 
     if (input.equals("ocean"))
@@ -153,7 +153,7 @@ public class TextAdventure
     if (ourHero.getGold() >= 50 && ourHero.getMonstersDefeated() > 0)
     {
       console.setImage("zone6_good.jpg");
-      System.out.println("The guardian nods and steps aside.\nYou enter the temple and see a blinding light that seems to speak to you...");
+      System.out.println("The guardian nods and steps aside.\nYou enter the temple and see a blinding light that seems to speak to you... \n ===BEST ENDING=== \n");
     }
 
     gameEnd();
