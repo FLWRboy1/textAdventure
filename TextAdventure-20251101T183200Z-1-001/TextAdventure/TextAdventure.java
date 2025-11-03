@@ -86,7 +86,32 @@ public class TextAdventure
     private void enterZone3()
     {
         showImage("boss.png");
-        System.out.println("The moment you touch the artifact, the sea begins to boil.\nA monstrous shadow rises, tentacles the size of mountains.\nCthulhu awakens, and your mind shatters as darkness surrounds you.\n=== WORST ENDING ===\n");
+        System.out.println("The moment you touch the artifact, the sea begins to boil.\nA monstrous shadow rises, tentacles the size of mountains.\nCthulhu awakens, and your mind shatters as darkness surrounds you.\nFight: Try to fight the beast in front of you.\nFlee: Run away.\n");
+        String choice = inScanner.nextLine().toLowerCase();
+
+        if (choice.equals("fight")){
+
+            enterZoneWorstEnding();
+            System.out.print("You died trying to fight Cthulhu...\n=== Worst Ending ===\n");
+        }
+        else if (choice.equals("flee")){
+
+            enterZoneWorstEnding();
+            System.out.print("You tried to run away from Cthulhu, but it was no use...\n=== Worst Ending ===\n");
+        }
+        else{
+
+            enterZoneWorstEnding();
+            System.out.print("You hesitated for too long...\n=== Worst Ending ===\n");
+
+        }
+        gameEnd();
+    }
+
+    // Chulhu thingamabob
+    private void enterZoneWorstEnding()
+    {
+        showImage("bossDied.png");
         gameEnd();
     }
 
@@ -191,7 +216,7 @@ public class TextAdventure
     private void delayFiveSeconds(){
 
         long start = System.currentTimeMillis();
-        long end = start + 2000; 
+        long end = start + 1000; 
 
         while (System.currentTimeMillis() < end){
 

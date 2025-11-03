@@ -125,6 +125,7 @@ public class FancyConsole extends JFrame
 	            		 String line = s.nextLine();
 		            	 publish(line);
 	            }
+              s.close();
 	            return null; 
 	        } 
 	         @Override protected void process(java.util.List<String> chunks) 
