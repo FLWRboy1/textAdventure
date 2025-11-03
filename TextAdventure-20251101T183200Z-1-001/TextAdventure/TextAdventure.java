@@ -177,7 +177,7 @@ public class TextAdventure
 
     private void gameEnd()
     {
-        System.out.println("Game Over.\nFinal Stats:\nName: " + ourHero.getName() + "\nHealth: " + ourHero.getHealth() + "\nGold: " + ourHero.getGold() + "\nMonsters Defeated: " + ourHero.getMonstersDefeated() + "\n");
+        System.out.println("Game Over\nFinal Stats:\nName: " + ourHero.getName() + "\nHealth: " + ourHero.getHealth() + "\nGold: " + ourHero.getGold() + "\nMonsters Defeated: " + ourHero.getMonstersDefeated() + "\n");
         inScanner.close();
     }
 
