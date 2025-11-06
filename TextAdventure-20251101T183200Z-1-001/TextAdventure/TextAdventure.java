@@ -90,22 +90,24 @@ public class TextAdventure
         String choice = inScanner.nextLine().toLowerCase();
 
         if (choice.equals("fight")){
-
-            enterZoneWorstEnding();
+            
             System.out.print("You died trying to fight Cthulhu...\n=== Worst Ending ===\n");
+            enterZoneWorstEnding();
+
         }
         else if (choice.equals("flee")){
 
-            enterZoneWorstEnding();
             System.out.print("You tried to run away from Cthulhu, but it was no use...\n=== Worst Ending ===\n");
+            enterZoneWorstEnding();
+
         }
         else{
 
-            enterZoneWorstEnding();
             System.out.print("You hesitated for too long...\n=== Worst Ending ===\n");
+            enterZoneWorstEnding();
+
 
         }
-        gameEnd();
     }
 
     // Chulhu thingamabob
@@ -114,6 +116,8 @@ public class TextAdventure
         showImage("bossDied.png");
         gameEnd();
     }
+
+    
 
     // Swim Further
     private void enterZone4()
